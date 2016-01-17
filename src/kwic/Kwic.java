@@ -37,13 +37,21 @@ public class Kwic {
 	}
 	
 	private String quickStringBuilder(String input) {
-		String[] x = input.split(" ");
+		String[] x = input.replaceAll("[^a-zA-Z ]", "").split("\\s+");
+		input = input.replaceAll("\\W", "");
 		String temp = x[x.length - 1];
 		x[x.length - 1] = x[0];
 		x[0] = temp;
-		input = x.toString();
-		return input;
-		
+		String y = null;
+		for(int i = 0; i < x.length; i++) {
+			if(y == null) {
+				y = x[i];
+			} else {
+				y+=" " + x[i];
+			}
+		}
+//		System.out.println(y);
+		return y;
 		//refactor this portion of the code
 		//the you from 8:02:28 knows exactly what TODO
 		//DO YOU?
