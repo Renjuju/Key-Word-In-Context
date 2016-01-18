@@ -32,7 +32,6 @@ public class Input {
 				textLines.add(line);
 			}
 		} catch(Exception e) {
-//			e.printStackTrace();	
 			System.out.println("Enter a valid input");
 			getUserInput();
 		}
@@ -52,6 +51,9 @@ public class Input {
 	}
 	
 	private void printInput(Vector<String> input) {
+		if(input == null) {
+			return;
+		}
 		System.out.println("Print input");
 		System.out.println("-----------");
 		for(int i = 0; i < input.size(); i++) {
