@@ -26,23 +26,11 @@ public class Kwic {
 			}
 		}
 		Collections.sort(finalOutput, String.CASE_INSENSITIVE_ORDER);
-		printInput(finalOutput);
 		return finalOutput;
 	}
 	
 	public Vector<String> kwicParser() {
 		return kwicParser(input);
-	}
-	
-	private void printInput(Vector<String> input) {
-		System.out.println("Print input");
-		System.out.println("-----------");
-		for(int i = 0; i < input.size(); i++) {
-			System.out.println(input.get(i));
-		}
-		System.out.println("-----------");
-		System.out.println("End of input");
-		System.out.println("");
 	}
 	
 	private int getArrLength(String input) {
@@ -51,8 +39,6 @@ public class Kwic {
 	}
 	private String quickStringBuilder(String input) {
 		String[] inputAr = input.replaceAll("[^a-zA-Z ]", "").split("\\s+");
-//		input = input.replaceAll("\\W", "");
-		String temp = inputAr[inputAr.length - 1];
 		String concatString = null;
 		for(int i = 0; i < inputAr.length; i++) {
 			if(i == 0) {
@@ -65,10 +51,6 @@ public class Kwic {
 			}
 		}
 		concatString+= " " + inputAr[0];
-//		System.out.println(concatString);
 		return concatString;
-		//refactor this portion of the code
-		//the you from 8:02:28 knows exactly what TODO
-		//DO YOU?
 	}
 }

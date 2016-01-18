@@ -12,4 +12,32 @@ public class UnitTest {
 	public void test() {
 		assertTrue(true);
 	}
+	
+	@Test
+	public void assertThatParserDoesntFail() {
+		
+	}
+	
+	@Test
+	public void ensurePrinterDoesntFail() {
+		
+	}
+	
+	@Test
+	public void getIntegerfromSring() {
+		
+	}
+	
+	@Test
+	public void checkThatStringBuilderGivesStringBack() {
+		
+	}
+	
+	@Test
+	public void checkThatUserInputReturnsVal() {
+		
+	}
+	
+	
+	
 }

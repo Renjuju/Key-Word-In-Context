@@ -15,7 +15,9 @@ public class Input {
 		if(userResponse.equalsIgnoreCase("y") || userResponse.equalsIgnoreCase("yes")) {
 			return getInput();
 		} else {
-			return getTextFile();
+			System.out.println("Enter your file name");
+			String fileName = in.nextLine();
+			return getTextFile(fileName);
 		}
 	}
 		
@@ -38,11 +40,10 @@ public class Input {
 		return textLines;
 	}
 	
-	public Vector<String> getTextFile() {
-		System.out.println("Defaulting to test.txt");
+	public Vector<String> getTextFile(String fileName) {
 		Vector<String> input = new Vector<String>();
 		try {
-			input = readFile("test.txt");
+			input = readFile(fileName);
 			printInput(input);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -63,12 +64,17 @@ public class Input {
 	
 	private Vector<String> readFile(String pathName) throws IOException {
 		Vector<String> input = new Vector<String>();
-	    Scanner reader = new Scanner(new File(pathName));
-	    while(reader.hasNext()){
-	        input.add(reader.nextLine());
-	    }
-	    reader.close();
-	    return input;
+		try {
+			Scanner reader = new Scanner(new File(pathName));
+		    while(reader.hasNext()){
+		        input.add(reader.nextLine());
+		    }
+		    reader.close();
+		    return input;
+		} catch(Exception e) {
+			
+		}
+		return null;
 	}
 	   
 }
