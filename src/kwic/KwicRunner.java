@@ -4,13 +4,15 @@ import java.util.Vector;
 
 public class KwicRunner {
 	public static void main(String args[]) {
-		Input userInput = new Input(); 
+		InputFilter userInput = new InputFilter(); 
 		Vector<String> val = userInput.getUserInput();
 		
-		Kwic tooQuick = new Kwic(val);
-		Vector<String> list = tooQuick.kwicParser();
+		CircularShifterFilter shifter = new CircularShifterFilter();
+		Vector<String> list = shifter.circularShift(val);
+
+		AlphabetizerFilter.alphabetize(list);
 		
-		Output output = new Output();
+		OutputFilter output = new OutputFilter();
 		output.getUserPreference(list);
 	}
 }

@@ -1,21 +1,9 @@
 package kwic;
 
-import java.util.Collections;
 import java.util.Vector;
 
-public class Kwic {
-	
-	private Vector<String> input;
-	
-	public Kwic(Vector<String> in) {
-		input = in;
-	}
-	
-	public Kwic() {
-		
-	}
-	
-	public Vector<String> kwicParser(Vector<String> input) {
+public class CircularShifterFilter extends Filter{
+	public Vector<String> circularShift(Vector<String> input) {
 		Vector<String> finalOutput = new Vector<String>();
 		for(int i = 0; i < input.size(); i++) {
 			int lineLength = getArrLength(input.get(i));
@@ -25,18 +13,14 @@ public class Kwic {
 				finalOutput.add(output);	
 			}
 		}
-		Collections.sort(finalOutput, String.CASE_INSENSITIVE_ORDER);
 		return finalOutput;
-	}
-	
-	public Vector<String> kwicParser() {
-		return kwicParser(input);
 	}
 	
 	private int getArrLength(String input) {
 		String[] inputAr = input.replaceAll("[^a-zA-Z ]", "").split("\\s+");
 		return inputAr.length;
 	}
+	
 	private String quickStringBuilder(String input) {
 		String[] inputAr = input.replaceAll("[^a-zA-Z ]", "").split("\\s+");
 		String concatString = null;

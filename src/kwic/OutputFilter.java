@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class Output {
+public class OutputFilter extends Filter{
 	
 	public void getUserPreference(Vector<String> input) {
 		System.out.println("Would you like to print to console or to file? (console/file)");
