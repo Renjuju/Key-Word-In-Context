@@ -4,16 +4,6 @@ import java.util.Vector;
 
 public class CircularShifterFilter extends Filter{
 	
-	private Vector<String> input;
-	
-	public CircularShifterFilter(Vector<String> in) {
-		this.input = in;
-	}
-	
-	public CircularShifterFilter() {
-		
-	}
-	
 	public Vector<String> circularShift() {
 		Vector<String> input = read();
 		Vector<String> finalOutput = new Vector<String>();

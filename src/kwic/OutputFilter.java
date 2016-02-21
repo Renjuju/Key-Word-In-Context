@@ -7,7 +7,6 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class OutputFilter extends Filter{
-	private Vector<String> in;
 	
 	public void getUserPreference() {
 		Vector<String> input = read();
@@ -31,7 +30,6 @@ public class OutputFilter extends Filter{
 	private void saveOutputToFile(String fileName, Vector<String> list) {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-
 			for(int i = 0; i < list.size(); i++) {
 				writer.write(list.get(i));
 				writer.newLine();
