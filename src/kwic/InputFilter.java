@@ -36,6 +36,7 @@ public class InputFilter extends Filter{
 			getUserInput();
 		}
 		printInput(textLines);
+		write(textLines);
 		return textLines;
 	}
 	
@@ -47,6 +48,7 @@ public class InputFilter extends Filter{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		write(input);
 		return input;
 	}
 	
@@ -77,6 +79,12 @@ public class InputFilter extends Filter{
 			
 		}
 		return null;
+	}
+
+
+	@Override
+	public void run() {
+		getUserInput();
 	}
 	   
 }

@@ -3,7 +3,19 @@ package kwic;
 import java.util.Vector;
 
 public class CircularShifterFilter extends Filter{
-	public Vector<String> circularShift(Vector<String> input) {
+	
+	private Vector<String> input;
+	
+	public CircularShifterFilter(Vector<String> in) {
+		this.input = in;
+	}
+	
+	public CircularShifterFilter() {
+		
+	}
+	
+	public Vector<String> circularShift() {
+		Vector<String> input = read();
 		Vector<String> finalOutput = new Vector<String>();
 		for(int i = 0; i < input.size(); i++) {
 			int lineLength = getArrLength(input.get(i));
@@ -13,6 +25,8 @@ public class CircularShifterFilter extends Filter{
 				finalOutput.add(output);	
 			}
 		}
+		System.out.println("Size: " + finalOutput.size());
+		write(finalOutput);
 		return finalOutput;
 	}
 	
@@ -36,5 +50,10 @@ public class CircularShifterFilter extends Filter{
 		}
 		concatString+= " " + inputAr[0];
 		return concatString;
+	}
+
+	@Override
+	public void run() {
+		circularShift();
 	}
 }

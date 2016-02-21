@@ -7,8 +7,10 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class OutputFilter extends Filter{
+	private Vector<String> in;
 	
-	public void getUserPreference(Vector<String> input) {
+	public void getUserPreference() {
+		Vector<String> input = read();
 		System.out.println("Would you like to print to console or to file? (console/file)");
 		Scanner in = new Scanner(System.in);
 		String choice = in.nextLine();
@@ -50,5 +52,10 @@ public class OutputFilter extends Filter{
 		System.out.println("-----------");
 		System.out.println("End of input");
 		System.out.println("");
+	}
+
+	@Override
+	public void run() {
+		getUserPreference();
 	}
 }
