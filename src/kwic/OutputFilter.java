@@ -6,9 +6,10 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class Output {
+public class OutputFilter extends Filter{
 	
-	public void getUserPreference(Vector<String> input) {
+	public void getUserPreference() {
+		Vector<String> input = read();
 		System.out.println("Would you like to print to console or to file? (console/file)");
 		Scanner in = new Scanner(System.in);
 		String choice = in.nextLine();
@@ -29,7 +30,6 @@ public class Output {
 	private void saveOutputToFile(String fileName, Vector<String> list) {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-
 			for(int i = 0; i < list.size(); i++) {
 				writer.write(list.get(i));
 				writer.newLine();
@@ -50,5 +50,10 @@ public class Output {
 		System.out.println("-----------");
 		System.out.println("End of input");
 		System.out.println("");
+	}
+
+	@Override
+	public void run() {
+		getUserPreference();
 	}
 }

@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class Input {
+public class InputFilter extends Filter{
 	Scanner in = new Scanner(System.in);
 	private Vector<String> textLines = new Vector<String>();
 	
@@ -36,6 +36,7 @@ public class Input {
 			getUserInput();
 		}
 		printInput(textLines);
+		write(textLines);
 		return textLines;
 	}
 	
@@ -47,6 +48,7 @@ public class Input {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		write(input);
 		return input;
 	}
 	
@@ -78,5 +80,10 @@ public class Input {
 		}
 		return null;
 	}
-	   
+
+
+	@Override
+	public void run() {
+		getUserInput();
+	}
 }
