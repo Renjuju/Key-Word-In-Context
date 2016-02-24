@@ -1,18 +1,13 @@
 package test;
 
-import static org.junit.Assert.*;
-
 import java.util.Vector;
 
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import kwic.AlphabetizerFilter;
 import kwic.CircularShifterFilter;
 import kwic.Filter;
-import kwic.InputFilter;
-import kwic.OutputFilter;
 import kwic.Pipe;
 import kwic.Pipes;
 
