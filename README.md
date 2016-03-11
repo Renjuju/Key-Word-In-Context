@@ -1,5 +1,12 @@
-SE 311: Systems Architecture Homework Assignment
+# Key Word in Context
 
-Test Driven Development
+## Implementation
+* Pipe and filter
+* Test Driven Development 
 
-Circular text thingy
+## Installation
+* Compile with java and run
+
+## Motivation
+* Trying out TDD
+* Systems Architecture homework assignment
