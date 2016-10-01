@@ -9,4 +9,3 @@
 
 ## Motivation
 * Trying out TDD
-* Systems Architecture homework assignment
